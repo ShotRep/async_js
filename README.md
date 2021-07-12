@@ -4,9 +4,10 @@
 
 <!-- GETTING STARTED -->
 ## Getting Started
-Async JS Crash Course - Callbacks, Promises, Async Await
+Async JS Crash Course - Callbacks, Promises, Async Await, Fetch
 </br>
 [YouTube - URL](https://www.youtube.com/watch?v=PoRJizFvM7s)
+[Fetch JSON data](https://jsonplaceholder.typicode.com/users)
 
 <!-- LICENSE -->
 ## License

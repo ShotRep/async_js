@@ -89,5 +89,30 @@ createPost({title: 'Post three', body:'This is the third post'})
   .then(getPosts)
   .catch(err => console.log(err))
 
-  //////////////////////////////////////ALL\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////////////////////ASYNC/AWAIT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+///////////////////////An elegant way to handle responses\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+async function init() {
+  await createPost({ title: 'Post Async/Await', body: 'This is a post' })
+  getPosts()
+}
+init()
+
+////////////////////////////////////Async / Await / Fetch\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+async function fetchUsers() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users")
+  const data = await res.json()
+  console.log(data)
+}
+fetchUsers()
+
+//////////////////////////////////////ALL\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
   ///////////Since we mostly need to resolve we can just use the ALL 
+const promise1 = Promise.resolve('Hello World')
+const promise2 = 10
+const promise3 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 2000, 'Goodbye'))
+const promise4 = fetch("https://jsonplaceholder.typicode.com/users").then(res => res.json())
+Promise.all([promise1, promise2, promise3, promise4]).then(values => console.log(values))
+  
+//https://jsonplaceholder.typicode.com/users
+
